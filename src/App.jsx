@@ -4,7 +4,11 @@ import viteLogo from "/vite.svg";
 // import Navbar from "./components/Navbar";
 // import AboutUs from "./components/AboutUs";
 import "./App.css";
-import Array3 from "./components/Array3";
+import InputDemo2 from "./components/InputDemo2";
+// import UseState1 from "./components/UseState1";
+// import InputDemo1 from "./components/InputDemo1";
+// import UseState2 from "./components/UseState2";
+// import Array3 from "./components/Array3";
 // import Array2 from "./components/Array2";
 // import Array1 from "./components/Array1";
 // import Header from "./components/Header";
@@ -21,7 +25,11 @@ function App() {
       <Footer /> */}
       {/* <Array1 /> */}
       {/* <Array2 /> */}
-      <Array3 />
+      {/* <Array3 /> */}
+      {/* <UseState1 /> */}
+      {/* <UseState2 /> */}
+      {/* <InputDemo1 /> */}
+      <InputDemo2 />
     </div>
   );
 }
