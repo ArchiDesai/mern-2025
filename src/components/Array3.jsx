@@ -33,8 +33,8 @@ const Array3 = () => {
     {
       id: 5,
       name: "Sarah Wilson",
-      position: "HR Specialist",
-      department: "Human Resources",
+      position: "Software Engineer",
+      department: "MCA",
       salary: 70000,
     },
   ];
@@ -42,7 +42,7 @@ const Array3 = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Employee List</h1>
-      <table class="table table-dark">
+      <table className="table table-dark" style={{ backgroundColor: "black" }}>
         <thead>
           <tr>
             <th>Id</th>
@@ -57,10 +57,31 @@ const Array3 = () => {
             return (
               <tr>
                 <td>{emp.id}</td>
-                <td>{emp.name}</td>
-                <td>{emp.position}</td>
+                <td>
+                  <span
+                    style={{
+                      color: emp.name.startsWith("J") ? "yellow" : "white",
+                    }}
+                  >
+                    {emp.name}
+                  </span>
+                </td>
+                <td
+                  style={{
+                    backgroundColor:
+                      emp.position === "Software Engineer" ? "green" : "black",
+                  }}
+                >
+                  {emp.position}
+                </td>
                 <td>{emp.department}</td>
-                <td>{emp.salary}</td>
+                <td
+                  style={{
+                    color: emp.salary >= 85000 ? "red" : "white",
+                  }}
+                >
+                  {emp.salary}
+                </td>
               </tr>
             );
           })}
