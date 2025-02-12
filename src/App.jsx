@@ -4,12 +4,14 @@ import viteLogo from "/vite.svg";
 // import Navbar from "./components/Navbar";
 // import AboutUs from "./components/AboutUs";
 import "./App.css";
-// import { Route, Routes } from "react-router";
-// import Navbar from "./components/hotstar/Navbar";
-// import Welcome from "./components/hotstar/Welcome";
-// import HotstarMovies from "./components/hotstar/HotstarMovies";
-// import Error404 from "./components/hotstar/Error404";
-// import HotstarHome from "./components/hotstar/HotstarHome";
+import { Route, Routes } from "react-router";
+import Navbar from "./components/hotstar/Navbar";
+import Welcome from "./components/hotstar/Welcome";
+import HotstarMovies from "./components/hotstar/HotstarMovies";
+import Error404 from "./components/hotstar/Error404";
+import HotstarHome from "./components/hotstar/HotstarHome";
+import Play from "./components/hotstar/Play";
+import Form1 from "./components/forms/Form1";
 // import UseState1 from "./components/UseState1";
 // import UseState2 from "./components/UseState2";
 // import InputDemo1 from "./components/InputDemo1";
@@ -18,7 +20,7 @@ import "./App.css";
 // import Array2 from "./components/Array2";
 // import Array3 from "./components/Array3";
 // import Array4 from "./components/Array4";
-import Array5 from "./components/Array5";
+// import Array5 from "./components/Array5";
 // import Header from "./components/Header";
 // import Content from "./components/Content";
 // import Footer from "./components/Footer";
@@ -35,18 +37,20 @@ function App() {
       {/* <Array2 /> */}
       {/* <Array3 /> */}
       {/* <Array4 /> */}
-      <Array5 />
+      {/* <Array5 /> */}
       {/* <UseState1 /> */}
       {/* <UseState2 /> */}
       {/* <InputDemo1 /> */}
       {/* <InputDemo2 /> */}
-      {/* <Navbar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Welcome />}></Route>
         <Route path="/home" element={<HotstarHome />}></Route>
+        <Route path="/play/:id" element={<Play />}></Route>
         <Route path="/movies" element={<HotstarMovies />}></Route>
+        <Route path="/form1" element={<Form1 />} />
         <Route path="/*" element={<Error404 />}></Route>
-      </Routes> */}
+      </Routes>
     </div>
   );
 }

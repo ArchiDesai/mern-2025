@@ -1,9 +1,25 @@
 import React from "react";
+import { Link } from "react-router";
 
 const HotstarMovies = () => {
   return (
-    <div style={{ backgroundColor: "lightgray", height: "90vh" }}>
-      <div className="card" style={{ width: "18rem", margin: "auto" }}>
+    <div
+      style={{
+        textAlign: "center",
+        backgroundColor: "lightgray",
+        height: "90vh",
+      }}
+    >
+      <h1>Movies...</h1>
+      <ul>
+        <li>
+          <Link to={"/play/1010"}>ABC</Link>
+        </li>
+        <li>
+          <Link to={"/play/1002"}>XYZ</Link>
+        </li>
+      </ul>
+      {/* <div className="card" style={{ width: "18rem", margin: "auto" }}>
         <img src="..." className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">Card title</h5>
@@ -31,7 +47,7 @@ const HotstarMovies = () => {
             Go somewhere
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

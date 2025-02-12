@@ -31,6 +31,11 @@ const Navbar = () => {
               Movies
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/form1">
+              Form1
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
