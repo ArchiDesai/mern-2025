@@ -2,10 +2,33 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const Form2 = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  console.log(errors);
 
   const submitHandler = (data) => {
     console.log(data);
+  };
+
+  const validationScheme = {
+    numberValidator: {
+      required: {
+        value: true,
+        message: "number is required",
+      },
+      pattern: {
+        value: /[6-9]{1}[0-9]{9}/,
+        message: "number is not valid",
+      },
+      maxlength: {
+        value: 11,
+        message: "max lengh is 10",
+      },
+    },
   };
 
   return (
@@ -28,7 +51,7 @@ const Form2 = () => {
           <div className="row" style={{ width: "40rem", margin: "auto" }}>
             <div className="col">
               <input
-                required
+                // required
                 type="text"
                 className="form-control"
                 placeholder="Name"
@@ -45,7 +68,7 @@ const Form2 = () => {
             style={{ margin: "auto", width: "40.3rem" }}
           >
             <input
-              required
+              // required
               type="email"
               className="form-control"
               id="colFormLabel"
@@ -61,13 +84,14 @@ const Form2 = () => {
             style={{ margin: "auto", width: "40.3rem" }}
           >
             <input
-              required
+              // required
               type="text"
               className="form-control"
               id="colFormLabel"
               placeholder="Phone Number"
-              {...register("phone no")}
+              {...register("phoneno", validationScheme.numberValidator)}
             />
+            <span style={{ color: "red" }}>{errors.phoneno?.message} </span>
           </div>
         </div>
         <h3 style={{ marginTop: "2rem" }}>Shipping Address</h3>
@@ -76,7 +100,7 @@ const Form2 = () => {
           <div className="row" style={{ width: "40rem", margin: "auto" }}>
             <div className="col">
               <textarea
-                required
+                // required
                 rows="3"
                 type="text"
                 className="form-control"
@@ -87,47 +111,126 @@ const Form2 = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            margin: "1.5rem auto",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "16rem",
-          }}
-        >
-          <div className="col-sm-10">
-            City
-            <input
-              required
-              type="text"
-              className="form-control"
-              id="colFormLabel"
-              placeholder="city"
-              {...register("city")}
-            />
+        <div style={{ marginTop: "1.5rem" }}>
+          Product Categories
+          <select
+            // required
+            className="form-control"
+            aria-label="Large select example"
+            style={{ margin: "auto", width: "38.5rem" }}
+            {...register("product type")}
+          >
+            <option>Please Select</option>
+            <option defaultValue="1">Electronics</option>
+            <option defaultValue="2"> Clothing & Accessories</option>
+            <option defaultValue="3">Beauty & Personal Care</option>
+            <option defaultValue="4">Home & Kitchen</option>
+            <option defaultValue="5"> Books & Stationery</option>
+            <option defaultValue="6">Sports & Outdoors</option>
+            <option defaultValue="7">Toys & Games</option>
+          </select>
+        </div>
+        <div style={{ marginTop: "1.5rem" }}>
+          Shipping Options
+          <div
+            // required
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "0.5rem",
+              columnGap: "2rem",
+            }}
+          >
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                value="shipping1"
+                id="flexRadioDefault1"
+                {...register("shipping type")}
+              />
+              <label className="form-check-label" htmlFor="flexRadioDefault1">
+                Standard Shipping (5-7 days)
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                value="shipping2"
+                id="flexRadioDefault2"
+                {...register("shipping type")}
+              />
+              <label className="form-check-label" htmlFor="flexRadioDefault2">
+                Express Shipping (2-3 days)
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                value="shipping3"
+                id="flexRadioDefault2"
+                {...register("shipping type")}
+              />
+              <label className="form-check-label" htmlFor="flexRadioDefault2">
+                Same-day Delivery
+              </label>
+            </div>
           </div>
-          <div className="col-sm-10">
-            State
-            <input
-              required
-              type="text"
-              className="form-control"
-              id="colFormLabel"
-              placeholder="state"
-              {...register("state")}
-            />
-          </div>
-          <div className="col-sm-10">
-            Postal code
-            <input
-              required
-              type="text"
-              className="form-control"
-              id="colFormLabel"
-              placeholder="postal code"
-              {...register("postal code")}
-            />
+        </div>
+        <div style={{ marginTop: "1.5rem" }}>
+          Additional Services
+          <div
+            // required
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "0.5rem",
+              columnGap: "2rem",
+            }}
+          >
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value="service1"
+                id="flexCheckDefault"
+                {...register("add service")}
+              />
+              <label className="form-check-label" htmlFor="flexCheckDefault">
+                Gift Wrap
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value="service2"
+                id="flexCheckChecked"
+                {...register("add service")}
+              />
+              <label className="form-check-label" htmlFor="flexCheckChecked">
+                Order Insurance
+              </label>
+            </div>
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value="service3"
+                id="flexCheckChecked"
+                {...register("add service")}
+              />
+              <label className="form-check-label" htmlFor="flexCheckChecked">
+                Extended Warranty (for electronics)
+              </label>
+            </div>
           </div>
         </div>
         <input

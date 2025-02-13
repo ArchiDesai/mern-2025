@@ -2,10 +2,28 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const Form1 = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  console.log("errors", errors);
 
   const submitHandler = (data) => {
     console.log(data);
+  };
+
+  const validationScheme = {
+    fnameValidator: {
+      required: { value: true, message: "first name is required" },
+    },
+    lnameValidator: {
+      required: { value: true, message: "last name is required" },
+    },
+    emailValidator: {
+      required: { value: true, message: "email is required" },
+    },
   };
 
   return (
@@ -27,23 +45,25 @@ const Form1 = () => {
           <div className="row" style={{ width: "40rem", margin: "auto" }}>
             <div className="col">
               <input
-                required
+                // required
                 type="text"
                 className="form-control"
                 placeholder="First name"
                 aria-label="First name"
-                {...register("first name")}
+                {...register("fname", validationScheme.fnameValidator)}
               />
+              <span style={{ color: "red" }}>{errors.fname?.message}</span>
             </div>
             <div className="col">
               <input
-                required
+                // required
                 type="text"
                 className="form-control"
                 placeholder="Last name"
                 aria-label="Last name"
-                {...register("last name")}
+                {...register("lname", validationScheme.lnameValidator)}
               />
+              <span style={{ color: "red" }}>{errors.lname?.message}</span>
             </div>
           </div>
         </div>
@@ -54,19 +74,20 @@ const Form1 = () => {
             style={{ margin: "auto", width: "40.3rem" }}
           >
             <input
-              required
+              // required
               type="email"
               className="form-control"
               id="colFormLabel"
               placeholder="example@gmail.com"
-              {...register("email")}
+              {...register("email", validationScheme.emailValidator)}
             />
+            <span style={{ color: "red" }}>{errors.email?.message}</span>
           </div>
         </div>
         <div style={{ marginTop: "1.5rem" }}>
           Please select the type of make-up you are looking for
           <select
-            required
+            // required
             className="form-control"
             aria-label="Large select example"
             style={{ margin: "auto", width: "38.5rem" }}
@@ -176,7 +197,7 @@ const Form1 = () => {
           At what date and time?
           <div>
             <input
-              required
+              // required
               type="date"
               name="date"
               id="date"
@@ -187,7 +208,7 @@ const Form1 = () => {
           </div>
           <div style={{ marginTop: "0.5rem" }}>
             <input
-              required
+              // required
               type="time"
               name="date"
               id="date"
@@ -197,11 +218,12 @@ const Form1 = () => {
             />
           </div>
         </div>
-
-        <input
-          type="submit"
-          style={{ width: "8rem", margin: "2rem 0", fontWeight: "700" }}
-        />
+        <div>
+          <input
+            type="submit"
+            style={{ width: "8rem", margin: "2rem 0", fontWeight: "700" }}
+          />
+        </div>
       </form>
     </div>
   );
