@@ -25,7 +25,7 @@ const Form2 = () => {
         message: "number is not valid",
       },
       maxlength: {
-        value: 11,
+        value: 10,
         message: "max lengh is 10",
       },
     },
