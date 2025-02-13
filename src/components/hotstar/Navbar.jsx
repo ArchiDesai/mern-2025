@@ -36,6 +36,11 @@ const Navbar = () => {
               Form1
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/form2">
+              Form2
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

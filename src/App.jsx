@@ -12,6 +12,7 @@ import Error404 from "./components/hotstar/Error404";
 import HotstarHome from "./components/hotstar/HotstarHome";
 import Play from "./components/hotstar/Play";
 import Form1 from "./components/forms/Form1";
+import Form2 from "./components/forms/Form2";
 // import UseState1 from "./components/UseState1";
 // import UseState2 from "./components/UseState2";
 // import InputDemo1 from "./components/InputDemo1";
@@ -49,6 +50,7 @@ function App() {
         <Route path="/play/:id" element={<Play />}></Route>
         <Route path="/movies" element={<HotstarMovies />}></Route>
         <Route path="/form1" element={<Form1 />} />
+        <Route path="/form2" element={<Form2 />} />
         <Route path="/*" element={<Error404 />}></Route>
       </Routes>
     </div>
