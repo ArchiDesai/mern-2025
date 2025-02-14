@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const Form2 = () => {
@@ -8,10 +8,15 @@ const Form2 = () => {
     formState: { errors },
   } = useForm();
 
-  console.log(errors);
+  const [output, setOutput] = useState();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // console.log(errors);
 
   const submitHandler = (data) => {
-    console.log(data);
+    // console.log(data);
+    setOutput(data);
+    setIsSubmitted(true);
   };
 
   const validationScheme = {
@@ -27,6 +32,15 @@ const Form2 = () => {
       maxLength: {
         value: 10,
         message: "max lengh is 10",
+      },
+    },
+    refcodeValidator: {
+      required: {
+        value: true,
+        message: "ref code is required",
+      },
+      validate: (value) => {
+        return value == "A5e7]56" || "ref code must be A5e7]56";
       },
     },
   };
@@ -233,12 +247,39 @@ const Form2 = () => {
             </div>
           </div>
         </div>
-        <input
-          type="submit"
-          value="Place Order"
-          style={{ width: "15rem", margin: "2rem 0", fontWeight: "700" }}
-        />
+        <div style={{ marginTop: "1.5rem" }}>
+          Referral Code
+          <div className="row" style={{ width: "40rem", margin: "auto" }}>
+            <div className="col">
+              <input
+                // required
+                type="text"
+                className="form-control"
+                placeholder="ref code"
+                aria-label="name"
+                {...register("code", validationScheme.refcodeValidator)}
+              />
+              <span style={{ color: "red" }}>{errors.code?.message}</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="submit"
+            value="Place Order"
+            style={{ width: "15rem", margin: "2rem 0", fontWeight: "700" }}
+          />
+        </div>
       </form>
+      {isSubmitted == true ? (
+        <div>
+          <h2>Name={output?.name}</h2>
+          <h3>Email={output?.email}</h3>
+          <h3>No={output?.phoneno}</h3>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
