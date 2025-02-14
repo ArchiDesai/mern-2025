@@ -24,7 +24,7 @@ const Form2 = () => {
         value: /[6-9]{1}[0-9]{9}/,
         message: "number is not valid",
       },
-      maxlength: {
+      maxLength: {
         value: 10,
         message: "max lengh is 10",
       },
