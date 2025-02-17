@@ -41,6 +41,11 @@ const Navbar = () => {
               Form2
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/api1">
+              API 1
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
