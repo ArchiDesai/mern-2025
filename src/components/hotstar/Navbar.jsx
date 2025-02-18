@@ -46,6 +46,16 @@ const Navbar = () => {
               API 1
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/search">
+              Search
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/moviedetail">
+              Movie Detail
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
