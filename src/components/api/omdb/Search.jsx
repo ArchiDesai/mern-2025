@@ -18,8 +18,8 @@ const Search = () => {
     <div
       style={{
         textAlign: "center",
-        backgroundColor: "lightgray",
-        height: "100%",
+        // backgroundColor: "lightgray",
+        // height: "100%",
       }}
     >
       <h1>Search Movie</h1>
@@ -43,7 +43,14 @@ const Search = () => {
             return (
               <div className="col-md-2">
                 <div className="card">
-                  <Link to={`/moviedetail/${movie.imdbID}`}>
+                  {/* <Link to={`/moviedetail/${movie.imdbID}`}>
+                    <img
+                      src={movie.Poster}
+                      className="card-img-top"
+                      alt="Card Image"
+                    />
+                  </Link> */}
+                  <Link to={`/moviedetail2/${movie.imdbID}`}>
                     <img
                       src={movie.Poster}
                       className="card-img-top"

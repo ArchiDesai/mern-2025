@@ -14,8 +14,10 @@ import Play from "./components/hotstar/Play";
 import Form1 from "./components/forms/Form1";
 import Form2 from "./components/forms/Form2";
 import Api1 from "./components/api/Api1";
-import Search from "./components/api/omdb.jsx/search";
-import MovieDetail from "./components/api/omdb.jsx/MovieDetail";
+import Search from "./components/api/omdb/search";
+import MovieDetail from "./components/api/omdb/MovieDetail";
+import MovieDetail2 from "./components/api/omdb/MovieDetail2";
+import Overview from "./components/api/omdb/Overview";
 // import UseState1 from "./components/UseState1";
 // import UseState2 from "./components/UseState2";
 // import InputDemo1 from "./components/InputDemo1";
@@ -56,7 +58,9 @@ function App() {
         <Route path="/form2" element={<Form2 />} />
         <Route path="/api1" element={<Api1 />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/moviedetail/:id" element={<MovieDetail />} />
+        {/* <Route path="/moviedetail/:id" element={<MovieDetail />} /> */}
+        <Route path="/moviedetail2/:id" element={<MovieDetail2 />} />
+        {/* <Route path="/overview" element={<Overview />} /> */}
         <Route path="/*" element={<Error404 />}></Route>
       </Routes>
     </div>

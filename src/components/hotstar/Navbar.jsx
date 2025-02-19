@@ -51,11 +51,6 @@ const Navbar = () => {
               Search
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/moviedetail">
-              Movie Detail
-            </Link>
-          </li>
         </ul>
       </div>
     </nav>
