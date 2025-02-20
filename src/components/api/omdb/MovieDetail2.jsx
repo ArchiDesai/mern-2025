@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 const MovieDetail2 = () => {
@@ -17,6 +17,10 @@ const MovieDetail2 = () => {
     setSubmitted(true);
   };
 
+  useEffect(() => {
+    getMovieDetail();
+  }, []);
+
   return (
     <div
       style={{
@@ -26,7 +30,7 @@ const MovieDetail2 = () => {
       }}
     >
       <h1>Movie Detail</h1>
-      <button
+      {/* <button
         className="btn btn-secondary"
         onClick={() => {
           getMovieDetail();
@@ -34,7 +38,7 @@ const MovieDetail2 = () => {
         style={{ marginTop: "1rem" }}
       >
         Get
-      </button>
+      </button> */}
       {submitted === true ? (
         <div style={{ marginTop: "2rem" }}>
           <div style={{ backgroundColor: "gray" }}>

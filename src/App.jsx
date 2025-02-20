@@ -18,6 +18,8 @@ import Search from "./components/api/omdb/search";
 import MovieDetail from "./components/api/omdb/MovieDetail";
 import MovieDetail2 from "./components/api/omdb/MovieDetail2";
 import Overview from "./components/api/omdb/Overview";
+import Api2 from "./components/api/Api2";
+import Api3 from "./components/api/Api3";
 // import UseState1 from "./components/UseState1";
 // import UseState2 from "./components/UseState2";
 // import InputDemo1 from "./components/InputDemo1";
@@ -57,10 +59,9 @@ function App() {
         <Route path="/form1" element={<Form1 />} />
         <Route path="/form2" element={<Form2 />} />
         <Route path="/api1" element={<Api1 />} />
+        <Route path="/api2" element={<Api2 />} />
+        <Route path="/api3" element={<Api3 />} />
         <Route path="/search" element={<Search />} />
-        {/* <Route path="/moviedetail/:id" element={<MovieDetail />} /> */}
-        <Route path="/moviedetail2/:id" element={<MovieDetail2 />} />
-        {/* <Route path="/overview" element={<Overview />} /> */}
         <Route path="/*" element={<Error404 />}></Route>
       </Routes>
     </div>
