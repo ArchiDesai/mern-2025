@@ -21,7 +21,7 @@ const Api1 = () => {
     const res = await axios.delete(
       "https://node5.onrender.com/user/user/" + id
     );
-    toast("🦄 Data Deleted", {
+    toast("🎉 Data Deleted..", {
       position: "top-right",
       autoClose: 1000,
       hideProgressBar: false,
@@ -29,7 +29,7 @@ const Api1 = () => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: "dark",
       transition: Bounce,
     });
     getData();
@@ -45,7 +45,7 @@ const Api1 = () => {
     >
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick={false}
@@ -53,7 +53,7 @@ const Api1 = () => {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light"
+        theme="dark"
         transition={Bounce}
       />
       {loading == false && (
