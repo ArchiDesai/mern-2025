@@ -62,6 +62,7 @@ function App() {
         <Route path="/api2" element={<Api2 />} />
         <Route path="/api3" element={<Api3 />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/moviedetail2/:id" element={<MovieDetail2 />} />
         <Route path="/*" element={<Error404 />}></Route>
       </Routes>
     </div>

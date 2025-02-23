@@ -48,20 +48,6 @@ const MovieDetail2 = () => {
                 {detail.Year} . {detail.Type} . {detail.Runtime}
               </h6>
             </div>
-            {/* <div>
-              <button type="button" className="btn btn-secondary btns">
-                Overview
-              </button>
-              <button type="button" className="btn btn-secondary btns">
-                Cast
-              </button>
-              <button type="button" className="btn btn-secondary btns">
-                Watch Movie
-              </button>
-              <button type="button" className="btn btn-secondary btns">
-                Reviews
-              </button>
-            </div> */}
           </div>
           <div
             style={{
